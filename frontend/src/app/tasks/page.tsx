@@ -36,12 +36,36 @@ export default function TasksMarketplacePage() {
       <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-12">
         <div className="flex flex-col mb-10 gap-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              <h1 className="text-3xl font-bold text-white mb-2">Explore Tasks</h1>
-              <p className="text-zinc-400">
-                Browse available micro-tasks and earn crypto instantly upon completion.
-              </p>
-            </div>
+            <div className="mb-10 text-center w-full">
+          <h1 className="text-4xl font-bold text-white mb-4">Explore Tasks</h1>
+          <p className="text-zinc-400 max-w-2xl mx-auto mb-8">
+            Browse available compute tasks across the network. Filter by category or search by keywords.
+          </p>
+
+          {/* Search Bar */}
+          <div className="max-w-xl mx-auto mb-6 relative">
+            <input 
+              type="text"
+              placeholder="Search for tasks..."
+              className="w-full bg-zinc-900 border border-zinc-800 rounded-full px-6 py-4 pl-12 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+            />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-zinc-500 absolute left-4 top-1/2 transform -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+
+          {/* Category Filter Chips */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {["All", "AI Inference", "Data Processing", "Model Training", "Rendering", "Other"].map(category => (
+              <button 
+                key={category}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${category === "All" ? "bg-blue-600 text-white" : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"}`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
             
             <div className="flex items-center gap-4 w-full sm:w-auto">
               <input 
