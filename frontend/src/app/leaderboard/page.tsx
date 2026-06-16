@@ -66,6 +66,7 @@ export default function LeaderboardPage() {
                     </span>
                   </div>
                   <div className="col-span-2 flex flex-col gap-1">
+                    {/* Task 22: Copy to Clipboard */}
                     <div className="flex items-center gap-2 group/copy cursor-pointer" onClick={() => {
                       navigator.clipboard.writeText(worker.address);
                       alert("Copied " + worker.address);
